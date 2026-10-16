@@ -1,0 +1,145 @@
+[TITLE]
+Student Water Distribution Network
+Practice network for EPANET-MATLAB Toolkit assignment
+
+[JUNCTIONS]
+;;ID                             	Elev        	Demand      	Pattern                        
+ J1                             	100.0000    
+ J2                             	95.0000     
+
+[RESERVOIRS]
+;;ID                             	Head        	Pattern                        
+ R1                             	130.0000    	                               
+
+[TANKS]
+;;ID                             	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve                       	Overflow    
+ T1                             	90.0000     	5.0000      	0.0000      	10.0000     	20.0000     	0.0000      	                               
+
+[PIPES]
+;;ID                             	Node1                          	Node2                          	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ P1                             	R1                             	J1                             	1000.0000   	200.0000    	130.0000    	0.0000      	      
+ P2                             	J1                             	J2                             	800.0000    	150.0000    	130.0000    	0.0000      	      
+ P3                             	J2                             	T1                             	500.0000    	150.0000    	130.0000    	0.0000      	      
+
+[PUMPS]
+;;ID                             	Node1                          	Node2                          	Parameters  
+
+[VALVES]
+;;ID                             	Node1                          	Node2                          	Diameter    	Type  	Setting     	MinorLoss   
+
+[DEMANDS]
+;;Junction                       	Demand        	Pattern                        	Category                       
+ J1                             	0.500000      	                               
+ J2                             	0.300000      	                               
+
+[EMITTERS]
+;;Junction                       	Coefficient   
+
+[LEAKAGE]
+;;Pipe                           	Leak Area     	Leak Expansion
+
+[STATUS]
+;;ID                             	Status/Setting
+
+[PATTERNS]
+;;ID                             	Multipliers 
+
+[CURVES]
+;;ID                             	X-Value     	Y-Value     
+
+[CONTROLS]
+
+[RULES]
+
+[QUALITY]
+;;ID                             	InitQual      
+
+[SOURCES]
+;;ID                             	Type     	Quality       	Pattern                        
+
+[MIXING]
+;;ID                             	Model   
+ T1                             	MIXED   	      1.0000
+
+[REACTIONS]
+ ORDER  BULK            1.00
+ ORDER  WALL            1
+ ORDER  TANK            1.00
+ GLOBAL BULK            0.000000
+ GLOBAL WALL            0.000000
+
+[REACTIONS]
+;Type     	Pipe/Tank                      	Coefficient 
+
+[ENERGY]
+ GLOBAL EFFIC        75.0000
+ DEMAND CHARGE       0.0000
+
+[TIMES]
+ DURATION            0:00:00
+ HYDRAULIC TIMESTEP  1:00:00
+ QUALITY TIMESTEP    0:05:00
+ REPORT TIMESTEP     1:00:00
+ REPORT START        0:00:00
+ PATTERN TIMESTEP    1:00:00
+ PATTERN START       0:00:00
+ RULE TIMESTEP       0:06:00
+ START CLOCKTIME     0:00:00
+ STATISTIC           NONE
+
+[OPTIONS]
+ UNITS               LPS
+ PRESSURE            METERS
+ HEADLOSS            H-W
+ UNBALANCED          CONTINUE 10
+ QUALITY             NONE
+ DEMAND MULTIPLIER   1.0000
+ EMITTER EXPONENT    0.5000
+ BACKFLOW ALLOWED    YES
+ VISCOSITY           1.000000
+ DIFFUSIVITY         1.000000
+ SPECIFIC GRAVITY    1.000000
+ TRIALS              40
+ ACCURACY            0.00100000
+ TOLERANCE           0.01000000
+ CHECKFREQ           2
+ MAXCHECK            10
+ DAMPLIMIT           0.00000000
+
+[REPORT]
+ PAGESIZE            0
+ STATUS              YES
+ SUMMARY             YES
+ ENERGY              NO
+ MESSAGES            YES
+ NODES               ALL
+ LINKS               ALL
+ Elevation           NO
+ Demand              PRECISION 2
+ Head                PRECISION 2
+ Pressure            PRECISION 2
+ Quality             NO
+ Length              NO
+ Diameter            NO
+ Flow                PRECISION 2
+ Velocity            PRECISION 2
+ Headloss            PRECISION 2
+ Quality             NO
+ State               NO
+ Setting             NO
+ Reaction            NO
+
+[TAGS]
+;;Object  	ID                             	Tag
+
+[COORDINATES]
+;;ID                             	X-Coord       	Y-Coord       
+ J1                             	100.000000    	0.000000      
+ J2                             	200.000000    	0.000000      
+ R1                             	0.000000      	0.000000      
+ T1                             	300.000000    	0.000000      
+
+[VERTICES]
+;;ID                             	X-Coord       	Y-Coord       
+
+[END]

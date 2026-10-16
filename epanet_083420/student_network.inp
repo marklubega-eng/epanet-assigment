@@ -1,0 +1,61 @@
+[TITLE]
+Student Water Distribution Network
+Practice network for EPANET-MATLAB Toolkit assignment
+
+[JUNCTIONS]
+;ID     Elevation   Demand
+J1      100         0.5
+J2      95          0.3
+
+[RESERVOIRS]
+;ID     Head
+R1      130
+
+[TANKS]
+;ID     Elevation  InitLevel  MinLevel  MaxLevel  Diameter  MinVol  VolCurve
+T1      90         5          0         10        20        0
+
+[PIPES]
+;ID     Node1  Node2  Length  Diameter  Roughness  MinorLoss  Status
+P1      R1     J1     1000    200       130        0          Open
+P2      J1     J2     800     150       130        0          Open
+P3      J2     T1     500     150       130        0          Open
+
+[OPTIONS]
+UNITS LPS
+HEADLOSS H-W
+SPECIFIC GRAVITY 1.0
+VISCOSITY 1.0
+TRIALS 40
+ACCURACY 0.001
+UNBALANCED CONTINUE 10
+DEMAND MULTIPLIER 1.0
+EMITTER EXPONENT 0.5
+QUALITY NONE
+
+[TIMES]
+DURATION 0:00
+HYDRAULIC TIMESTEP 1:00
+QUALITY TIMESTEP 0:05
+PATTERN TIMESTEP 1:00
+PATTERN START 0:00
+REPORT TIMESTEP 1:00
+REPORT START 0:00
+START CLOCKTIME 12 AM
+STATISTIC NONE
+
+[REPORT]
+STATUS YES
+SUMMARY YES
+NODES ALL
+LINKS ALL
+
+[COORDINATES]
+R1      0       0
+J1      100     0
+J2      200     0
+T1      300     0
+
+[VERTICES]
+
+[END]
